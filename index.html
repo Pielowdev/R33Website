@@ -6,7 +6,6 @@
     <title>R33 | Gamer</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -15,158 +14,261 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+            background-color: #0f0f0f;
             color: #fff;
-            text-align: center;
-            overflow-x: hidden;
         }
 
-        /* Header */
-        header {
-            padding: 80px 20px 50px 20px;
-            background: url('https://images.unsplash.com/photo-1606813908965-fd6dc844c331?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGdhbWluZyUyMGJhY2tncm91bmR8ZW58MHx8fHwxNjk2MjYxMjc5&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center/cover;
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+
+        nav h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2em;
+            color: #00ffea;
+            text-shadow: 0 0 5px #00ffea;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li {
             position: relative;
         }
 
-        header::after {
+        nav ul li a {
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ffea;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: url('https://images.unsplash.com/photo-1606813908965-fd6dc844c331?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGdhbWluZyUyMGJhY2tncm91bmR8ZW58MHx8fHwxNjk2MjYxMjc5&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero::after {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 0;
+            top:0; left:0;
+            width:100%; height:100%;
+            background: rgba(0,0,0,0.6);
         }
 
-        header h1 {
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        .hero h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4em;
-            z-index: 1;
-            position: relative;
+            font-size: 3em;
             color: #00ffea;
-            text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #00ffea;
         }
 
-        header p {
-            font-size: 1.2em;
+        .hero p {
+            font-size: 1.3em;
             color: #ccc;
-            z-index: 1;
-            position: relative;
-            margin-top: 10px;
         }
 
-        /* Buttons */
-        .links {
-            margin: 50px 0;
+        .hero .buttons {
+            margin-top: 30px;
             display: flex;
-            justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
-        .links a {
+        .hero .buttons a {
             padding: 15px 35px;
-            font-size: 1.2em;
-            text-decoration: none;
-            color: #fff;
+            font-size: 1.1em;
+            border-radius: 12px;
             background: linear-gradient(45deg, #ff2c2c, #ff8c00);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(255, 44, 44, 0.5);
+            box-shadow: 0 0 15px rgba(255,44,44,0.5);
+            transition: 0.3s;
             position: relative;
             overflow: hidden;
         }
 
-        .links a::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.15);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-        }
-
-        .links a:hover::after {
-            top: 0;
-            left: 0;
-        }
-
-        .links a:hover {
+        .hero .buttons a:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 25px rgba(255, 44, 44, 0.8);
+            box-shadow: 0 0 25px rgba(255,44,44,0.8);
         }
 
-        /* Section */
+        /* Sections */
         section {
-            max-width: 800px;
-            margin: 0 auto 80px auto;
-            padding: 0 20px;
-            animation: fadeInUp 1s ease forwards;
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 30px;
         }
 
         section h2 {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5em;
-            margin-bottom: 20px;
             color: #00ffea;
-            text-shadow: 0 0 5px #00ffea;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         section p {
             font-size: 1.1em;
             line-height: 1.7;
             color: #ddd;
+            text-align: center;
+        }
+
+        /* Games Section */
+        .games {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .game-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,255,234,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0,255,234,0.6);
+        }
+
+        .game-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .game-card h3 {
+            margin-top: 15px;
+            color: #00ffea;
         }
 
         /* Footer */
         footer {
-            padding: 20px;
+            padding: 25px;
             background-color: #111;
             color: #888;
-            font-size: 0.9em;
+            text-align: center;
         }
 
         /* Animations */
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(30px); }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 3em;
+        @media(max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
             }
 
-            .links a {
+            .hero h2 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
                 font-size: 1em;
-                padding: 12px 25px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Navbar -->
+    <nav>
         <h1>R33</h1>
-        <p>FPS & Racing Gamer | Streaming on Twitch & YouTube</p>
-    </header>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#streams">Streams</a></li>
+        </ul>
+    </nav>
 
-    <div class="links">
-        <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-        <a href="https://www.twitch.tv/" target="_blank">Twitch</a>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to R33's Gaming World</h2>
+            <p>FPS & Racing Gamer | Streaming on Twitch & YouTube</p>
+            <div class="buttons">
+                <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+                <a href="https://www.twitch.tv/" target="_blank">Twitch</a>
+            </div>
+        </div>
+    </section>
 
-    <section>
+    <!-- About Section -->
+    <section id="about">
         <h2>About Me</h2>
         <p>
-            Hey, I'm R33! I dominate in fast-paced FPS games like Halo, where precision and strategy are everything. 
-            But I also have a need for speed—racing games like Forza keep me on the edge of my seat as I master every corner. 
+            I'm R33! I thrive in fast-paced FPS games like Halo where strategy and precision are key. 
+            Racing games like Forza let me feel the thrill of speed as I master every corner. 
             Join me online to watch streams, gameplay highlights, and connect with fellow gamers who share the thrill of competition.
         </p>
     </section>
 
+    <!-- Games Section -->
+    <section id="games">
+        <h2>My Favorite Games</h2>
+        <div class="games">
+            <div class="game-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/e/e6/Halo_Infinite.png" alt="Halo">
+                <h3>Halo</h3>
+            </div>
+            <div class="game-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/1/18/Forza_Horizon_5_cover_art.jpg" alt="Forza">
+                <h3>Forza Horizon</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Streams Section -->
+    <section id="streams">
+        <h2>Watch Me Live</h2>
+        <p>Catch my gameplay on Twitch or check out highlights on YouTube. I stream both FPS battles and high-speed racing adventures!</p>
+        <div class="buttons">
+            <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+            <a href="https://www.twitch.tv/" target="_blank">Twitch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         &copy; 2025 R33 | All rights reserved
     </footer>
