@@ -6,23 +6,14 @@
 <title>R33 | Gamer</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
         font-family: 'Roboto', sans-serif;
         background-color: #0f0f0f;
         color: #fff;
         line-height: 1.6;
     }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     /* Navbar */
     nav {
@@ -36,27 +27,19 @@
         z-index: 1000;
         box-shadow: 0 2px 15px rgba(0,0,0,0.7);
     }
-
     nav h1 {
         font-family: 'Orbitron', sans-serif;
         font-size: 2em;
         color: #bf00ff;
         text-shadow: 0 0 10px #bf00ff;
     }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 30px;
-    }
-
+    nav ul { list-style: none; display: flex; gap: 30px; }
     nav ul li a {
         font-weight: 500;
         font-size: 1.05em;
         position: relative;
         transition: 0.3s;
     }
-
     nav ul li a::after {
         content: '';
         display: block;
@@ -66,10 +49,7 @@
         transition: 0.3s;
         margin-top: 5px;
     }
-
-    nav ul li a:hover::after {
-        width: 100%;
-    }
+    nav ul li a:hover::after { width: 100%; }
 
     /* Hero Section */
     .hero {
@@ -77,12 +57,10 @@
         background: url('https://images.unsplash.com/photo-1606813908965-fd6dc844c331?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGdhbWluZyUyMGJhY2tncm91bmR8ZW58MHx8fHwxNjk2MjYxMjc5&ixlib=rb-4.0.3&q=80&w=1080') center/cover no-repeat;
         position: relative;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
     }
-
     .hero::after {
         content: '';
         position: absolute;
@@ -90,14 +68,7 @@
         width:100%; height:100%;
         background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
     }
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-        color: #fff;
-        animation: fadeIn 1.5s ease forwards;
-    }
-
+    .hero-content { position: relative; z-index: 1; animation: fadeIn 1.5s ease forwards; }
     .hero h2 {
         font-family: 'Orbitron', sans-serif;
         font-size: 3em;
@@ -105,20 +76,13 @@
         margin-bottom: 15px;
         text-shadow: 0 0 20px #bf00ff;
     }
-
-    .hero p {
-        font-size: 1.2em;
-        color: #ccc;
-        margin-bottom: 30px;
-    }
-
+    .hero p { font-size: 1.2em; color: #ccc; margin-bottom: 30px; }
     .hero .buttons {
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
         justify-content: center;
     }
-
     .hero .buttons a {
         padding: 15px 35px;
         font-size: 1.1em;
@@ -129,19 +93,13 @@
         position: relative;
         overflow: hidden;
     }
-
     .hero .buttons a:hover {
         transform: scale(1.1);
         box-shadow: 0 0 30px rgba(191,0,255,0.8);
     }
 
     /* Sections */
-    section {
-        max-width: 1000px;
-        margin: 80px auto;
-        padding: 0 30px;
-    }
-
+    section { max-width: 1000px; margin: 80px auto; padding: 0 30px; }
     section h2 {
         font-family: 'Orbitron', sans-serif;
         font-size: 2.5em;
@@ -149,13 +107,7 @@
         margin-bottom: 25px;
         text-align: center;
     }
-
-    section p {
-        font-size: 1.1em;
-        line-height: 1.7;
-        color: #ddd;
-        text-align: center;
-    }
+    section p { font-size: 1.1em; line-height: 1.7; color: #ddd; text-align: center; }
 
     /* Games Section */
     .games {
@@ -165,7 +117,6 @@
         gap: 30px;
         margin-top: 40px;
     }
-
     .game-card {
         position: relative;
         background-color: #1a1a1a;
@@ -177,10 +128,7 @@
         cursor: pointer;
         overflow: hidden;
     }
-
-    .game-card:hover {
-        transform: translateY(-10px);
-    }
+    .game-card:hover { transform: translateY(-10px); }
 
     /* Store Overlay */
     .store-overlay {
@@ -199,31 +147,21 @@
         text-align: center;
         padding: 10px;
     }
-
     .game-card.steam:hover {
         box-shadow: 0 0 35px rgba(0,120,255,0.8);
     }
-
-    .game-card.steam:hover .store-overlay {
-        opacity: 1;
-        color: #00aaff;
-    }
-
+    .game-card.steam:hover .store-overlay { opacity: 1; color: #00aaff; }
     .game-card.xbox:hover {
         box-shadow: 0 0 35px rgba(0,255,0,0.8);
     }
-
-    .game-card.xbox:hover .store-overlay {
-        opacity: 1;
-        color: #00ff00;
-    }
+    .game-card.xbox:hover .store-overlay { opacity: 1; color: #00ff00; }
 
     .game-card img {
         width: 100%;
+        height: 200px;
         border-radius: 10px;
         object-fit: cover;
     }
-
     .game-card h3 {
         margin-top: 15px;
         color: #bf00ff;
@@ -246,22 +184,10 @@
     }
 
     @media(max-width: 768px) {
-        nav {
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .hero h2 {
-            font-size: 2.2em;
-        }
-
-        .hero p {
-            font-size: 1em;
-        }
-
-        .game-card {
-            width: 200px;
-        }
+        nav { flex-direction: column; gap: 10px; }
+        .hero h2 { font-size: 2.2em; }
+        .hero p { font-size: 1em; }
+        .game-card { width: 200px; height: auto; }
     }
 </style>
 </head>
@@ -301,19 +227,22 @@
     <section id="games">
         <h2>My Favorite Games</h2>
         <div class="games">
+            <!-- Halo Infinite -->
             <a href="https://store.steampowered.com/app/1240440/Halo_Infinite/" target="_blank" class="game-card steam">
                 <div class="store-overlay">Go to Steam</div>
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1240440/header.jpg" alt="Halo Infinite">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/3b/Halo_Infinite.png" alt="Halo Infinite">
                 <h3>Halo Infinite</h3>
             </a>
+            <!-- Forza Horizon 5 -->
             <a href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/" target="_blank" class="game-card steam">
                 <div class="store-overlay">Go to Steam</div>
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1551360/header.jpg" alt="Forza Horizon 5">
+                <img src="https://upload.wikimedia.org/wikipedia/en/0/04/Forza_Horizon_5_cover_art.jpg" alt="Forza Horizon 5">
                 <h3>Forza Horizon 5</h3>
             </a>
+            <!-- Forza Motorsport -->
             <a href="https://www.microsoft.com/en-us/p/forza-motorsport/9p1x7s0hwpq6" target="_blank" class="game-card xbox">
                 <div class="store-overlay">Go to Xbox Store</div>
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/205860/header.jpg" alt="Forza Motorsport">
+                <img src="https://upload.wikimedia.org/wikipedia/en/4/46/Forza_Motorsport_Logo.png" alt="Forza Motorsport">
                 <h3>Forza Motorsport</h3>
             </a>
         </div>
